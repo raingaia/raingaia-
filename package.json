@@ -1,0 +1,12 @@
+{
+  "name": "nexus-digital-seal-root",
+  "version": "1.0.0",
+  "description": "Integrated Supply Chain Security Ecosystem",
+  "scripts": {
+    "dashboard": "cd dashboard-next && npm run dev",
+    "dashboard:build": "cd dashboard-next && npm run build",
+    "dashboard:start": "cd dashboard-next && npm run start",
+    "oracle:build": "g++ -o oracle-cpp/oracle oracle-cpp/main.cpp",
+    "nexus:start": "npm run oracle:build && npm run dashboard"
+  }
+}
