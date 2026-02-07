@@ -1,0 +1,20 @@
+{
+  "kid": "0f3e64e5ba371168",
+  "asset_id": "MED_MLCBNMYB_2353E8A0",
+  "qr_hash": "19c6622ce3c02b630cb8881219a3aa8ead673b7789c3b5371f7a403cd782a8ec",
+  "api_commit": "3c3659d498f6234aacf71474123381ec",
+  "pair_commit": "cd831f02878cf8eab9ed17b2d249e46957f98c112cde784358e5f037427549d4",
+  "ts": 1770469212,
+  "bucket_sec": 5,
+  "sensor": {
+    "tempC": 22.5,
+    "humidity": 60,
+    "lat": 41.0082,
+    "lon": 28.9784
+  },
+  "sensor_fingerprint": "8fa6569e4ef5311f7337404412e6ff2d625d0230027a1e633fead055f26b766a",
+  "prev_seal": "1d74a8907c381da52adb3b65288c67859513490a4ab6a1f2b5965592429acb1b",
+  "seal": "ceae39a043afe27e669593355ba0b9a9b7b0a47bbb9461670e7702b0e51c7806",
+  "drift_ok": true,
+  "drift_reason": "OK"
+}

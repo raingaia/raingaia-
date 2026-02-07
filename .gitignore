@@ -1,10 +1,8 @@
 node_modules/
-.next/
-out/
-build/
+dashboard-next/node_modules/
+.env
+.env.local
+.env.*
 .DS_Store
-*.exe
-*.o
-oracle-cpp/oracle
-identity.json
-rules.json
+*.log
+

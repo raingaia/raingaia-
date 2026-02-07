@@ -1,0 +1,10 @@
+{
+  "version": "nexus-identity-v1",
+  "ts": "2026-02-07T13:20:24.620Z",
+  "asset_id": "MED_MLCCDMP8_8D9BBBE3",
+  "asset_type": "MEDICAL_SUPPLY",
+  "origin": "NJ_WAREHOUSE_01",
+  "qr_ref": "QR_F99506AFF12D67EE795F3309",
+  "qr_code_hash": "6cddd69eadf45b3b92392dd1f454d6621938e455bc68337720edd38a5c38aab7",
+  "status": "INITIALIZED"
+}

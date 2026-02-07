@@ -1,54 +1,155 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.0;
+pragma solidity ^0.8.20;
 
 contract DigitalSeal {
-    
-    // Mühürün Yapısı: Kimlik, Durum ve Zaman
-    struct Seal {
-        string sealHash;    // Oracle'dan gelen benzersiz hash
-        bool isValid;       // Ürün güvenli mi?
-        uint256 timestamp;  // Ne zaman mühürlendi?
-        string location;    // Hangi koordinatta?
-    }
-
-    // Hash => Mühür Eşleşmesi
-    mapping(string => Seal) public seals;
-    
-    // Olay Günlüğü (Dashboard'da göreceğiz)
-    event SealCreated(string indexed sealHash, uint256 timestamp);
-    event SealRevoked(string indexed sealHash, string reason);
-
+    // -------------------------
+    // Roles / Access
+    // -------------------------
     address public owner;
+    mapping(address => bool) public writers;
 
-    constructor() {
-        owner = msg.sender; // Kontratı başlatan biziz (Admin)
+    modifier onlyOwner() {
+        require(msg.sender == owner, "NOT_OWNER");
+        _;
     }
 
-    // 1. Mühürü Zincire Çakma Fonksiyonu
-    function mintSeal(string memory _sealHash, string memory _location) public {
-        require(msg.sender == owner, "Yetkisiz islem!");
-        require(seals[_sealHash].timestamp == 0, "Bu urun zaten muhurlu!");
+    modifier onlyWriter() {
+        require(writers[msg.sender] || msg.sender == owner, "NOT_WRITER");
+        _;
+    }
 
-        seals[_sealHash] = Seal({
-            sealHash: _sealHash,
+    // -------------------------
+    // Data Model
+    // -------------------------
+    struct Seal {
+        bool exists;
+        bool isValid;
+        uint64 timestamp;        // block timestamp (seconds)
+        string location;         // keep string for demo; can be geohash later
+        address writer;          // who minted it
+        string revokeReason;     // empty if not revoked
+        uint64 revokedAt;        // 0 if not revoked
+        address revokedBy;       // address(0) if not revoked
+    }
+
+    mapping(bytes32 => Seal) private _seals;
+
+    // -------------------------
+    // Events (Dashboard friendly)
+    // -------------------------
+    event WriterAdded(address indexed writer);
+    event WriterRemoved(address indexed writer);
+
+    event SealCreated(
+        bytes32 indexed sealHash,
+        uint64 timestamp,
+        address indexed writer,
+        string location
+    );
+
+    event SealRevoked(
+        bytes32 indexed sealHash,
+        uint64 revokedAt,
+        address indexed revokedBy,
+        string reason
+    );
+
+    // -------------------------
+    // Constructor
+    // -------------------------
+    constructor() {
+        owner = msg.sender;
+        writers[msg.sender] = true;
+        emit WriterAdded(msg.sender);
+    }
+
+    // -------------------------
+    // Admin: manage writers
+    // -------------------------
+    function addWriter(address w) external onlyOwner {
+        require(w != address(0), "ZERO_ADDR");
+        require(!writers[w], "ALREADY_WRITER");
+        writers[w] = true;
+        emit WriterAdded(w);
+    }
+
+    function removeWriter(address w) external onlyOwner {
+        require(writers[w], "NOT_WRITER");
+        writers[w] = false;
+        emit WriterRemoved(w);
+    }
+
+    // -------------------------
+    // Core: mint / verify / revoke
+    // -------------------------
+    function mintSeal(bytes32 sealHash, string calldata location) external onlyWriter {
+        require(sealHash != bytes32(0), "BAD_HASH");
+        require(!_seals[sealHash].exists, "ALREADY_MINTED");
+
+        _seals[sealHash] = Seal({
+            exists: true,
             isValid: true,
-            timestamp: block.timestamp,
-            location: _location
+            timestamp: uint64(block.timestamp),
+            location: location,
+            writer: msg.sender,
+            revokeReason: "",
+            revokedAt: 0,
+            revokedBy: address(0)
         });
 
-        emit SealCreated(_sealHash, block.timestamp);
+        emit SealCreated(sealHash, uint64(block.timestamp), msg.sender, location);
     }
 
-    // 2. Mühür Kontrolü (Son Kullanıcı İçin)
-    function verifySeal(string memory _sealHash) public view returns (bool, uint256, string memory) {
-        Seal memory s = seals[_sealHash];
-        return (s.isValid, s.timestamp, s.location);
+    function verifySeal(bytes32 sealHash)
+        external
+        view
+        returns (
+            bool exists,
+            bool isValid,
+            uint64 timestamp,
+            string memory location,
+            address writer,
+            uint64 revokedAt,
+            address revokedBy,
+            string memory revokeReason
+        )
+    {
+        Seal memory s = _seals[sealHash];
+        return (
+            s.exists,
+            s.isValid,
+            s.timestamp,
+            s.location,
+            s.writer,
+            s.revokedAt,
+            s.revokedBy,
+            s.revokeReason
+        );
     }
 
-    // 3. Acil Durum Butonu (Eğer sonradan bir sorun çıkarsa)
-    function revokeSeal(string memory _sealHash, string memory _reason) public {
-        require(msg.sender == owner, "Yetkisiz islem!");
-        seals[_sealHash].isValid = false;
-        emit SealRevoked(_sealHash, _reason);
+    function revokeSeal(bytes32 sealHash, string calldata reason) external onlyOwner {
+        Seal storage s = _seals[sealHash];
+        require(s.exists, "NOT_FOUND");
+        require(s.isValid, "ALREADY_REVOKED");
+
+        s.isValid = false;
+        s.revokedAt = uint64(block.timestamp);
+        s.revokedBy = msg.sender;
+        s.revokeReason = reason;
+
+        emit SealRevoked(sealHash, uint64(block.timestamp), msg.sender, reason);
+    }
+
+    // Optional: quick getter (cheaper for dashboards)
+    function getSeal(bytes32 sealHash) external view returns (Seal memory) {
+        return _seals[sealHash];
+    }
+
+    // Optional: transfer ownership
+    function transferOwnership(address newOwner) external onlyOwner {
+        require(newOwner != address(0), "ZERO_ADDR");
+        owner = newOwner;
+        writers[newOwner] = true;
+        emit WriterAdded(newOwner);
     }
 }

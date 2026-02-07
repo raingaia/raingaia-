@@ -1,0 +1,72 @@
+﻿@import "tailwindcss";
+
+:root{
+  --brand-blue:#0b5ed7;
+  --ink:#0f172a;
+  --muted:#475569;
+  --bg:#f8fafc;
+  --card:#ffffff;
+  --line:#e5e7eb;
+}
+
+html,body{
+  height:100%;
+  margin:0;
+  padding:0;
+  background:var(--bg) !important;
+  color:var(--ink) !important;
+}
+
+.argus-container{
+  min-height:100vh;
+  background:var(--bg) !important;
+  padding:64px 24px;
+}
+
+.argus-card{
+  max-width:980px;
+  margin:0 auto;
+  background:var(--card) !important;
+  border:1px solid var(--line) !important;
+  border-radius:18px;
+  box-shadow:0 12px 30px rgba(2,6,23,.08);
+  padding:22px;
+}
+:root{
+  --brand-blue:#0b5ed7;      /* sağlık mavisi */
+  --brand-blue-dark:#084298;/* footer/derinlik */
+  --brand-blue-soft:#0ea5e9;/* hafif vurgu */
+
+  --bg:#f8fafc;
+  --card:#ffffff;
+  --line:#e5e7eb;
+
+  --ink:#0f172a;
+  --muted:#475569;
+}
+
+/* ===== Header & Footer (Kurumsal Mavi) ===== */
+.argus-header,
+.argus-footer{
+  background: linear-gradient(
+    90deg,
+    var(--brand-blue) 0%,
+    var(--brand-blue-soft) 100%
+  );
+  color: #ffffff;
+}
+
+/* Header içeriği */
+.argus-header a,
+.argus-header button{
+  color:#ffffff;
+}
+
+/* Footer biraz daha derin */
+.argus-footer{
+  background: linear-gradient(
+    90deg,
+    var(--brand-blue-dark) 0%,
+    var(--brand-blue) 100%
+  );
+}

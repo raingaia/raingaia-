@@ -2,11 +2,39 @@
   "name": "nexus-digital-seal-root",
   "version": "1.0.0",
   "description": "Integrated Supply Chain Security Ecosystem",
+  "private": true,
   "scripts": {
-    "dashboard": "cd dashboard-next && npm run dev",
+    "nexus:start": "bash ./start_nexus.sh",
+    "start": "bash ./start_nexus.sh",
+
+    "dashboard:dev": "cd dashboard-next && npm run dev",
+    "dashboard:dev:win": "cmd.exe /c \"cd /d %CD%\\dashboard-next && npm run dev\"",
     "dashboard:build": "cd dashboard-next && npm run build",
     "dashboard:start": "cd dashboard-next && npm run start",
-    "oracle:build": "g++ -o oracle-cpp/oracle oracle-cpp/main.cpp",
-    "nexus:start": "npm run oracle:build && npm run dashboard"
+
+    "oracle:build": "g++ -O2 -std=c++17 -o oracle-cpp/oracle.exe oracle-cpp/main.cpp -lssl -lcrypto",
+    "oracle:run": "cd oracle-cpp && ./oracle.exe 22.5 60 41.0082 28.9784",
+    "oracle": "npm run oracle:build && npm run oracle:run",
+
+    "edge:run": "python edge-python/validator.py 22.5 60 41.0082 28.9784",
+
+    "api:dev": "tsx server.ts",
+    "api:start": "tsx server.ts",
+
+    "dev": "concurrently -n api,dash -c auto \"npm run api:dev\" \"npm run dashboard:dev\"",
+    "dev:win": "concurrently -n api,dash -c auto \"npm run api:dev\" \"npm run dashboard:dev:win\"",
+
+    "build": "npm run dashboard:build"
+  },
+  "devDependencies": {
+    "@types/node": "^25.2.0",
+    "concurrently": "^9.2.1",
+    "npm-run-all": "^4.1.5",
+    "tsx": "^4.21.0",
+    "typescript": "^5.9.3"
+  },
+  "dependencies": {
+    "@fastify/cors": "^11.2.0",
+    "fastify": "^5.7.4"
   }
 }

@@ -1,0 +1,47 @@
+{
+  "brand": "ARGUS PROTOCOL",
+  "nav": [
+    { "label": "Solutions", "href": "#features" },
+    { "label": "About Us", "href": "#about" }
+  ],
+  "hero": {
+    "title": "The Global Standard for Unquestionable Trust.",
+    "subtitle": "Argus Protocol redefines security with unparalleled data integrity.",
+    "cta": { "label": "Secure Your World", "href": "#contact" }
+  },
+  "features": [
+    {
+      "icon": "lock",
+      "title": "Unbreakable Data Integrity",
+      "desc": "Proprietary multi-layer encryption ensuring immutable truth."
+    },
+    {
+      "icon": "satellite",
+      "title": "Satellite-Powered Precision",
+      "desc": "Real-time global data verification with near-zero latency."
+    },
+    {
+      "icon": "chip",
+      "title": "Granular Physical Seal (0.5mm)",
+      "desc": "Micro-sensor digital twin for physical assets."
+    },
+    {
+      "icon": "shield",
+      "title": "Zero-Tolerance Fraud Detection",
+      "desc": "Eliminate counterfeiting and illicit trade across supply chains."
+    }
+  ],
+  "trust": {
+    "title": "Trusted by Tomorrow’s Leaders",
+    "quote": "Argus Protocol isn’t just a technology; it’s the new backbone of global commerce.",
+    "author": "CEO, Major Shipping Conglomerate"
+  },
+  "footer": {
+    "links": [
+      { "label": "Privacy Policy", "href": "#" },
+      { "label": "Terms of Service", "href": "#" },
+      { "label": "Careers", "href": "#" }
+    ],
+    "copyright": "© 2026 Argus Protocol. All Rights Reserved."
+  }
+}

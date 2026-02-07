@@ -1,0 +1,20 @@
+{
+  "version": "nexus-seal-payload-v1",
+  "ts": "2026-02-05T12:00:03Z",
+  "asset_id": "ALPHA-1",
+  "kid": "KID_ALPHAV1_1A2B3C",
+  "qr_ref": "QRREF_ALPHAV1_9F1A",
+  "pair_commit": "PAIRCOMMIT_PLACEHOLDER",
+  "oracle_hash": "0xORACLE_HASH_PLACEHOLDER",
+  "fingerprint": {
+    "fp_now": "FP_NOW_PLACEHOLDER",
+    "hamming": 0,
+    "score": 1.0,
+    "deviation": "OK"
+  },
+  "edge_verdict": {
+    "ok": true,
+    "code": "OK"
+  },
+  "mint_ready": true
+}
