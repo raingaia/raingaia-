@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>RAINGAIA HEALTH — International Access to U.S. Advanced Treatment & Clinical Trials</title>
+<meta name="description" content="RAINGAIA HEALTH helps patients worldwide with rare, serious, and complex diagnoses reach U.S. clinical trials and advanced therapies. Independent case review, second opinions, record coordination, and institutional partnerships." />
+<meta name="robots" content="index, follow" />
+<link rel="canonical" href="https://health.raingaia.com/" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="favicon-192.png">
+<link rel="icon" type="image/png" sizes="512x512" href="favicon-512.png">
+<link rel="apple-touch-icon" sizes="180x180" href="favicon-180.png">
+<link rel="shortcut icon" href="favicon.ico">
+<style>
+  :root{
+    --navy:#0B2A43; --navy-deep:#071B2C; --blue:#1C6FB0; --blue-bright:#2E8FDB;
+    --teal:#1F8A7A; --teal-soft:#E6F1EE; --sand:#F6F3EC; --sand-deep:#EFE9DC;
+    --ink:#172431; --ink-soft:#4B5B68; --line:#DCE3E6; --white:#FFFFFF; --amber:#C08A2E;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{font-family:'Inter',sans-serif;color:var(--ink);background:var(--sand);-webkit-font-smoothing:antialiased;}
+  h1,h2,h3,h4{font-family:'Source Serif 4', serif;font-weight:600;color:var(--navy);margin:0;line-height:1.15;}
+  p{margin:0;line-height:1.6;color:var(--ink-soft);}
+  a{color:inherit;text-decoration:none;}
+  img{max-width:100%;display:block;}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 28px;}
+  .eyebrow{font-family:'Inter',sans-serif;text-transform:uppercase;letter-spacing:.14em;font-size:12px;font-weight:600;color:var(--teal);}
+  .btn{display:inline-flex;align-items:center;gap:8px;padding:14px 28px;border-radius:2px;font-weight:600;font-size:15px;cursor:pointer;border:1px solid transparent;transition:all .2s ease;}
+  .btn-primary{background:var(--navy);color:var(--white);}
+  .btn-primary:hover{background:var(--navy-deep);}
+  .btn-ghost{background:transparent;color:var(--navy);border-color:var(--navy);}
+  .btn-ghost:hover{background:var(--navy);color:var(--white);}
+  section{padding:96px 0;}
+  @media (max-width:768px){section{padding:64px 0;}}
+  header{position:sticky;top:0;z-index:100;background:rgba(246,243,236,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);}
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;padding:16px 28px;max-width:1180px;margin:0 auto;}
+  .logo{font-family:'Source Serif 4',serif;font-weight:700;font-size:20px;color:var(--navy);display:flex;align-items:center;gap:10px;white-space:nowrap;}
+  .logo-mark{width:28px;height:28px;border-radius:50%;background:conic-gradient(from 220deg, var(--teal), var(--blue) 55%, var(--navy));flex-shrink:0;}
+  nav.links{display:flex;gap:26px;font-size:14px;font-weight:500;color:var(--ink);flex-wrap:wrap;}
+  nav.links a:hover{color:var(--blue);}
+  .nav-cta{display:flex;align-items:center;gap:18px;}
+  @media (max-width:1100px){nav.links{display:none;}}
+
+  /* Mobile hamburger menu */
+  .menu-btn{display:none;background:none;border:none;cursor:pointer;padding:8px;flex-direction:column;gap:5px;}
+  .menu-btn span{display:block;width:22px;height:2px;background:var(--navy);transition:transform .2s, opacity .2s;}
+  @media (max-width:1100px){.menu-btn{display:flex;}}
+  .mobile-menu{
+    display:none;position:fixed;top:0;left:0;right:0;bottom:0;z-index:200;
+    background:var(--navy-deep);padding:24px 28px;flex-direction:column;
+  }
+  .mobile-menu.open{display:flex;}
+  .mobile-menu .close-btn{align-self:flex-end;background:none;border:none;color:#fff;font-size:28px;cursor:pointer;line-height:1;padding:6px;}
+  .mobile-menu nav{display:flex;flex-direction:column;gap:6px;margin-top:24px;}
+  .mobile-menu nav a{color:#fff;font-family:'Source Serif 4',serif;font-size:24px;padding:14px 0;border-bottom:1px solid rgba(255,255,255,.12);}
+  .mobile-menu .btn-primary{margin-top:28px;text-align:center;justify-content:center;}
+  .hero{position:relative;background:linear-gradient(180deg,#0B2A43 0%, #0E3654 62%, #123F60 100%);color:var(--white);overflow:hidden;padding:110px 0 0;}
+  .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:60px;align-items:center;position:relative;z-index:2;}
+  @media (max-width:920px){.hero-grid{grid-template-columns:1fr;}}
+  .hero h1{color:var(--white);font-size:clamp(32px,4.6vw,52px);letter-spacing:-.01em;}
+  .hero .eyebrow{color:#7FD9C4;margin-bottom:18px;display:block;}
+  .hero p.lede{color:#C9D8E3;font-size:18px;margin-top:22px;max-width:520px;}
+  .hero-actions{display:flex;gap:16px;margin-top:36px;flex-wrap:wrap;}
+  .hero .btn-primary{background:var(--teal);}
+  .hero .btn-primary:hover{background:#186F62;}
+  .hero .btn-ghost{border-color:rgba(255,255,255,.5);color:var(--white);}
+  .hero .btn-ghost:hover{background:rgba(255,255,255,.12);}
+  .route-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.14);border-radius:4px;padding:32px 28px;}
+  .route-svg{width:100%;height:auto;display:block;}
+  .route-caption{display:flex;justify-content:space-between;margin-top:18px;font-size:12.5px;color:#9FB4C4;text-transform:uppercase;letter-spacing:.08em;}
+  .hero-bottom-fade{height:64px;background:linear-gradient(180deg, transparent, var(--sand));margin-top:70px;}
+  .fact-strip{background:var(--navy);color:var(--white);}
+  .fact-strip .wrap{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid rgba(255,255,255,.12);}
+  .fact{padding:26px 24px;border-left:1px solid rgba(255,255,255,.12);}
+  .fact:first-child{border-left:none;}
+  .fact .num{font-family:'Source Serif 4',serif;font-size:24px;color:var(--white);}
+  .fact .lbl{font-size:12px;color:#9FB4C4;margin-top:4px;text-transform:uppercase;letter-spacing:.06em;}
+  @media (max-width:768px){.fact-strip .wrap{grid-template-columns:repeat(2,1fr);}.fact{border-left:none;border-top:1px solid rgba(255,255,255,.12);}}
+  .section-head{display:flex;justify-content:space-between;align-items:flex-end;gap:40px;flex-wrap:wrap;margin-bottom:52px;}
+  .section-head h2{font-size:clamp(26px,3.2vw,36px);max-width:560px;}
+  .problem{background:var(--sand);}
+  .problem-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:64px;align-items:flex-start;}
+  @media (max-width:900px){.problem-grid{grid-template-columns:1fr;}}
+  .problem-list{display:flex;flex-direction:column;}
+  .problem-item{display:grid;grid-template-columns:auto 1fr;gap:20px;padding:22px 0;border-top:1px solid var(--line);}
+  .problem-item:last-child{border-bottom:1px solid var(--line);}
+  .problem-item .tag{font-family:'Source Serif 4',serif;font-size:15px;color:var(--teal);white-space:nowrap;padding-top:2px;}
+  .problem-item h4{font-size:17px;margin-bottom:6px;color:var(--navy);}
+  .problem-item p{font-size:15px;}
+  .how{background:var(--navy-deep);color:var(--white);}
+  .how .eyebrow{color:#7FD9C4;}
+  .how h2{color:var(--white);}
+  .steps{margin-top:60px;display:grid;grid-template-columns:repeat(4,1fr);position:relative;}
+  .steps::before{content:"";position:absolute;top:22px;left:0;right:0;height:1px;background:linear-gradient(90deg, rgba(127,217,196,0) 0%, rgba(127,217,196,.5) 8%, rgba(127,217,196,.5) 92%, rgba(127,217,196,0) 100%);}
+  @media (max-width:900px){.steps{grid-template-columns:1fr;}.steps::before{display:none;}}
+  .step{padding:0 24px 0 0;position:relative;}
+  .step:first-child{padding-left:0;}
+  @media (max-width:900px){.step{padding:0 0 40px 32px;border-left:1px solid rgba(127,217,196,.35);}}
+  .step-dot{width:11px;height:11px;border-radius:50%;background:var(--teal);border:3px solid var(--navy-deep);box-shadow:0 0 0 1px rgba(127,217,196,.6);margin-bottom:22px;position:relative;z-index:2;}
+  @media (max-width:900px){.step-dot{position:absolute;left:-6px;top:0;}}
+  .step h4{color:var(--white);font-size:18px;margin-bottom:10px;}
+  .step p{color:#AEC2CF;font-size:14.5px;}
+  .step .stage-label{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#7FD9C4;margin-bottom:10px;display:block;}
+  .services{background:var(--sand);}
+  .service-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);}
+  @media (max-width:900px){.service-grid{grid-template-columns:1fr;}}
+  .service-card{background:var(--white);padding:32px 28px;min-height:210px;display:flex;flex-direction:column;}
+  .service-card .idx{font-family:'Source Serif 4',serif;color:var(--teal);font-size:13px;text-transform:uppercase;letter-spacing:.06em;margin-bottom:16px;}
+  .service-card h3{font-size:18px;margin-bottom:10px;}
+  .service-card p{font-size:14px;flex-grow:1;}
+  .matching-box{background:var(--white);border:1px solid var(--line);padding:32px 30px;margin-bottom:44px;}
+  .matching-box h3{font-size:18px;margin-bottom:14px;}
+  .matching-box ul{margin:14px 0;padding-left:20px;}
+  .matching-box li{font-size:14.5px;color:var(--ink-soft);margin-bottom:8px;}
+  .programs{background:var(--navy);color:var(--white);}
+  .programs .eyebrow{color:#7FD9C4;}
+  .programs h2{color:var(--white);}
+  .prog-grid{margin-top:52px;display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.14);}
+  @media (max-width:820px){.prog-grid{grid-template-columns:1fr;}}
+  .prog-card{background:var(--navy-deep);padding:32px 30px;}
+  .prog-card.wide{grid-column:1 / -1;}
+  .prog-card .tag{font-size:11.5px;text-transform:uppercase;letter-spacing:.08em;color:#7FD9C4;font-weight:600;}
+  .prog-card h3{color:var(--white);font-size:19px;margin:12px 0 10px;}
+  .prog-card p{color:#AEC2CF;font-size:14.5px;}
+  .conditions{background:var(--sand);}
+  .cond-grid{margin-top:44px;display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
+  @media (max-width:900px){.cond-grid{grid-template-columns:1fr 1fr;}}
+  @media (max-width:600px){.cond-grid{grid-template-columns:1fr;}}
+  .cond-card{border:1px solid var(--line);background:var(--white);padding:26px 22px;border-radius:2px;}
+  .cond-card h4{font-size:16px;margin-bottom:8px;}
+  .cond-card p{font-size:13.5px;}
+  .transparency{background:var(--sand-deep);}
+  .tp-grid{display:grid;grid-template-columns:1fr 1fr;border:1px solid var(--line);}
+  @media (max-width:840px){.tp-grid{grid-template-columns:1fr;}}
+  .tp-col{padding:40px 36px;}
+  .tp-col.yes{background:var(--teal-soft);border-right:1px solid var(--line);}
+  @media (max-width:840px){.tp-col.yes{border-right:none;border-bottom:1px solid var(--line);}}
+  .tp-col h3{font-size:14px;text-transform:uppercase;letter-spacing:.08em;font-family:'Inter',sans-serif;font-weight:700;margin-bottom:20px;}
+  .tp-col.yes h3{color:var(--teal);}
+  .tp-col.no h3{color:var(--amber);}
+  .tp-list{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:13px;}
+  .tp-list li{font-size:14.5px;color:var(--ink);padding-left:20px;position:relative;}
+  .tp-list li::before{position:absolute;left:0;font-family:'Source Serif 4',serif;}
+  .tp-col.yes li::before{content:"+";color:var(--teal);font-weight:700;}
+  .tp-col.no li::before{content:"–";color:var(--amber);font-weight:700;}
+  .fees{background:var(--sand);}
+  .fees-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);margin-top:48px;}
+  @media (max-width:900px){.fees-grid{grid-template-columns:1fr;}}
+  .fee-card{background:var(--white);padding:30px 26px;}
+  .fee-card .stage-label{font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--teal);font-weight:600;}
+  .fee-card h3{font-size:18px;margin:10px 0 8px;}
+  .fee-card p{font-size:13.5px;}
+  .fee-note{margin-top:26px;font-size:13px;color:var(--ink-soft);border-left:2px solid var(--amber);padding-left:16px;}
+  .about{background:var(--sand-deep);}
+  .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;}
+  @media (max-width:900px){.about-grid{grid-template-columns:1fr;}}
+  .about h3{font-size:18px;margin:28px 0 10px;}
+  .about h3:first-child{margin-top:0;}
+  .about p{font-size:14.5px;margin-bottom:10px;}
+  .company-card{background:var(--white);border:1px solid var(--line);padding:26px 24px;font-size:14px;color:var(--ink-soft);}
+  .apply{background:var(--navy-deep);color:var(--white);}
+  .apply-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:60px;}
+  @media (max-width:900px){.apply-grid{grid-template-columns:1fr;}}
+  .apply .eyebrow{color:#7FD9C4;}
+  .apply p{color:#AEC2CF;font-size:14.5px;margin-top:16px;max-width:400px;}
+  .contact-block{margin-top:36px;border-top:1px solid rgba(255,255,255,.15);padding-top:26px;}
+  .contact-block div{font-size:14px;color:#AEC2CF;margin-bottom:8px;}
+  form{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.14);padding:34px;border-radius:2px;}
+  .form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px;}
+  @media (max-width:560px){.form-row{grid-template-columns:1fr;}}
+  label{font-size:12.5px;color:#AEC2CF;display:block;margin-bottom:7px;text-transform:uppercase;letter-spacing:.05em;}
+  input,select,textarea{width:100%;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.2);color:var(--white);padding:11px 13px;font-family:'Inter',sans-serif;font-size:14px;border-radius:2px;}
+  input::placeholder,textarea::placeholder{color:#6E8393;}
+  input:focus,select:focus,textarea:focus{outline:none;border-color:var(--teal);}
+  .field{margin-bottom:16px;}
+  .consent{display:flex;gap:10px;align-items:flex-start;font-size:12.5px;color:#AEC2CF;margin:20px 0;}
+  .consent input{width:auto;margin-top:3px;}
+  .form-submit{width:100%;background:var(--teal);color:var(--white);border:none;padding:14px;font-size:14.5px;font-weight:600;border-radius:2px;cursor:pointer;transition:background .2s;}
+  .form-submit:hover{background:#186F62;}
+  #form-status{margin-top:12px;font-size:13.5px;}
+  .legal{background:var(--sand);}
+  .legal-shell{max-width:820px;margin:0 auto;}
+  .legal-tabs{display:flex;gap:10px;margin-bottom:36px;flex-wrap:wrap;}
+  .legal-tab{padding:9px 18px;border:1px solid var(--line);border-radius:20px;font-size:13px;background:var(--white);cursor:pointer;color:var(--navy);}
+  .legal-tab.active{background:var(--navy);color:var(--white);border-color:var(--navy);}
+  .legal-panel{display:none;}
+  .legal-panel.active{display:block;}
+  .legal-panel h3{font-size:19px;margin-top:26px;margin-bottom:10px;}
+  .legal-panel h3:first-child{margin-top:0;}
+  .legal-panel p{font-size:14.5px;margin-bottom:12px;}
+  .legal-panel ul{margin:0 0 14px;padding-left:20px;}
+  .legal-panel li{font-size:14.5px;color:var(--ink-soft);margin-bottom:6px;}
+  .updated{font-size:12.5px;color:var(--ink-soft);margin-bottom:24px;display:block;}
+  footer{background:var(--navy-deep);color:#8199A9;padding:54px 0 30px;border-top:1px solid rgba(255,255,255,.08);}
+  .footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px;padding-bottom:36px;}
+  @media (max-width:760px){.footer-grid{grid-template-columns:1fr;}}
+  .footer-grid h5{color:#C9D8E3;font-size:12.5px;text-transform:uppercase;letter-spacing:.07em;margin-bottom:15px;font-weight:600;font-family:'Inter',sans-serif;}
+  .footer-grid a{display:block;font-size:13.5px;color:#8199A9;margin-bottom:9px;}
+  .footer-grid a:hover{color:var(--white);}
+  .footer-legal{font-size:12px;line-height:1.7;color:#5E7383;border-top:1px solid rgba(255,255,255,.08);padding-top:24px;}
+  .footer-bottom{display:flex;justify-content:space-between;margin-top:22px;font-size:12px;color:#5E7383;flex-wrap:wrap;gap:10px;}
+  .disclaimer-banner{background:#FBF3E4;border-top:1px solid #E9D7AE;border-bottom:1px solid #E9D7AE;padding:11px 0;font-size:12.5px;color:#7A5B1E;text-align:center;}
+  .detail-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.14);padding:22px 24px;margin-bottom:14px;border-radius:2px;}
+  .detail-card h4{color:var(--white);font-size:15.5px;margin-bottom:8px;}
+  .detail-card p{color:#AEC2CF;font-size:13.5px;margin:0;}
+  .detail-card.light{background:var(--white);border:1px solid var(--line);}
+  .detail-card.light h4{color:var(--navy);}
+  .detail-card.light p{color:var(--ink-soft);}
+  .prog-block{padding:44px 0;border-top:1px solid rgba(255,255,255,.12);}
+  .prog-block:first-of-type{padding-top:8px;border-top:none;}
+  .prog-block .tag{font-size:11.5px;text-transform:uppercase;letter-spacing:.08em;color:#7FD9C4;font-weight:600;}
+  .prog-block h3{color:var(--white);font-size:22px;margin:10px 0 12px;}
+  .prog-block > p.lede-p{color:#C9D8E3;font-size:15px;max-width:640px;margin-bottom:22px;}
+  .prog-detail-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;}
+  @media (max-width:820px){.prog-detail-grid{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+
+<div class="disclaimer-banner wrap" style="max-width:100%;">
+  RAINGAIA HEALTH is an independent patient access facilitator, a service of RAINGAIA LLC. We are not a pharmacy, a medical provider, or a government agency, and we do not guarantee acceptance into any program.
+</div>
+
+<header>
+  <div class="nav-inner">
+    <a href="#top" class="logo"><span class="logo-mark"></span>RAINGAIA HEALTH</a>
+    <nav class="links">
+      <a href="#how">How It Works</a>
+      <a href="#services">Services</a>
+      <a href="#programs">Programs</a>
+      <a href="#conditions">Conditions</a>
+      <a href="#fees">Fees</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="nav-cta">
+      <a href="#apply" class="btn btn-primary" style="padding:11px 22px;font-size:14px;">Start My Case Review</a>
+    </div>
+    <button class="menu-btn" id="menuBtn" aria-label="Open menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<div class="mobile-menu" id="mobileMenu">
+  <button class="close-btn" id="closeMenuBtn" aria-label="Close menu">&times;</button>
+  <nav>
+    <a href="#how">How It Works</a>
+    <a href="#services">Services</a>
+    <a href="#programs">Programs</a>
+    <a href="#conditions">Conditions</a>
+    <a href="#fees">Fees</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+  </nav>
+  <a href="#apply" class="btn btn-primary">Start My Case Review</a>
+</div>
+
+<a id="top"></a>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <span class="eyebrow">International Patient Access &amp; Clinical Trial Facilitation</span>
+        <h1>When the right treatment exists — but not where you live.</h1>
+        <p class="lede">RAINGAIA HEALTH connects patients with rare, serious, and complex diagnoses to advanced therapies and clinical trials at U.S. hospitals and research centers — with independent case review and full coordination support, wherever you are.</p>
+        <div class="hero-actions">
+          <a href="#apply" class="btn btn-primary">Start My Case Review</a>
+          <a href="#how" class="btn btn-ghost">See How It Works</a>
+        </div>
+      </div>
+      <div class="route-card">
+        <svg class="route-svg" viewBox="0 0 460 220" xmlns="http://www.w3.org/2000/svg">
+          <path d="M20 170 C 110 190, 160 40, 240 60 S 360 170, 440 40" fill="none" stroke="rgba(127,217,196,.55)" stroke-width="1.5" stroke-dasharray="3 5"/>
+          <circle cx="20" cy="170" r="5" fill="#7FD9C4"/>
+          <circle cx="150" cy="86" r="5" fill="#2E8FDB"/>
+          <circle cx="240" cy="60" r="5" fill="#2E8FDB"/>
+          <circle cx="340" cy="130" r="5" fill="#2E8FDB"/>
+          <circle cx="440" cy="40" r="6" fill="#ffffff"/>
+          <text x="8" y="192" fill="#9FB4C4" font-size="11" font-family="Inter">Home country</text>
+          <text x="120" y="108" fill="#9FB4C4" font-size="11" font-family="Inter">Case review</text>
+          <text x="210" y="46" fill="#9FB4C4" font-size="11" font-family="Inter">Matching</text>
+          <text x="300" y="152" fill="#9FB4C4" font-size="11" font-family="Inter">Coordination</text>
+          <text x="386" y="26" fill="#ffffff" font-size="11" font-family="Inter">U.S. center</text>
+        </svg>
+        <div class="route-caption"><span>Case opened</span><span>Reviewed</span><span>Matched</span><span>In treatment</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="hero-bottom-fade"></div>
+</section>
+
+<div class="fact-strip">
+  <div class="wrap">
+    <div class="fact"><div class="num">St. Petersburg, FL</div><div class="lbl">Company Headquarters</div></div>
+    <div class="fact"><div class="num">Any Country</div><div class="lbl">Patients We Serve</div></div>
+    <div class="fact"><div class="num">Independent</div><div class="lbl">Not Affiliated With Any Single Hospital</div></div>
+    <div class="fact"><div class="num">No Guarantee</div><div class="lbl">Of Acceptance — By Design</div></div>
+  </div>
+</div>
+
+<!-- PROBLEM -->
+<section class="problem">
+  <div class="wrap problem-grid">
+    <div>
+      <span class="eyebrow">The Barrier</span>
+      <h2 style="margin-top:14px;">The best available treatment is often a border away.</h2>
+      <p style="margin-top:20px;font-size:15px;">For rare, progressive, or advanced disease, the most relevant clinical trial or therapy is frequently concentrated in the United States — and simply unreachable without the right guidance.</p>
+    </div>
+    <div class="problem-list">
+      <div class="problem-item"><div class="tag">Access</div><div><h4>No local pathway to the therapy</h4><p>Advanced or investigational treatments, including gene therapies, are often available only through U.S. centers and trial sites — with no equivalent at home.</p></div></div>
+      <div class="problem-item"><div class="tag">Language</div><div><h4>Records, terminology, and paperwork</h4><p>Medical records arrive in another language and format than what U.S. institutions require, slowing every step before care even begins.</p></div></div>
+      <div class="problem-item"><div class="tag">Navigation</div><div><h4>No way to identify the right trial</h4><p>Thousands of active U.S. trials exist for serious conditions — finding the one that matches a specific diagnosis and eligibility profile is its own specialty.</p></div></div>
+      <div class="problem-item"><div class="tag">Logistics</div><div><h4>Appointments, travel, and communication</h4><p>Coordinating evaluations, accommodation, and an ongoing line of communication with a U.S. medical team is a full-time task most families can't take on alone.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="how" id="how">
+  <div class="wrap">
+    <span class="eyebrow">The Process</span>
+    <h2 style="margin-top:14px;">Four stages, from first contact to an active care plan.</h2>
+    <div class="steps">
+      <div class="step"><div class="step-dot"></div><span class="stage-label">Stage 1</span><h4>Case submission &amp; review</h4><p>You share your diagnosis, medical history, and records. Our clinical research team reviews the case to understand what U.S. options may be relevant.</p></div>
+      <div class="step"><div class="step-dot"></div><span class="stage-label">Stage 2</span><h4>Trial &amp; center matching</h4><p>We verify eligibility, active enrollment status, and physician credentials before presenting a match — and explain the realistic options honestly, including when no genuine match exists.</p></div>
+      <div class="step"><div class="step-dot"></div><span class="stage-label">Stage 3</span><h4>Application &amp; coordination</h4><p>We prepare and submit your application, organize your medical records, and coordinate appointments and evaluations with the receiving institution.</p></div>
+      <div class="step"><div class="step-dot"></div><span class="stage-label">Stage 4</span><h4>Accommodation, hospital process &amp; ongoing support</h4><p>If accepted, we coordinate accommodation and each step of the hospital process in the U.S. Visa document organization is included; visa legal representation is not — we refer you to independent immigration counsel for that.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services" id="services">
+  <div class="wrap">
+    <div class="section-head">
+      <div><span class="eyebrow">What We Do</span><h2 style="margin-top:14px;">Coordination services, not medical treatment.</h2></div>
+      <p style="max-width:360px;font-size:14px;">Every service below is administrative and logistical. Clinical decisions are always made by licensed physicians at the receiving institution.</p>
+    </div>
+
+    <div class="matching-box">
+      <span class="eyebrow">Our Matching Standard</span>
+      <h3 style="margin-top:10px;">Doğru araştırma, doğru eşleştirme.</h3>
+      <p style="font-size:14.5px;">We do not refer patients to whichever institution is easiest to reach. Every match passes three checks:</p>
+      <ul>
+        <li><strong>Eligibility cross-check</strong> — inclusion criteria confirmed against your specific diagnosis and stage.</li>
+        <li><strong>Active status verification</strong> — the trial or program is currently enrolling and accepting international cases.</li>
+        <li><strong>Physician &amp; institution credentials</strong> — verified standing before coordination begins.</li>
+      </ul>
+      <p style="font-size:14.5px;">If no genuine match exists for your case, we tell you plainly rather than proceeding with a poor fit.</p>
+    </div>
+
+    <div class="service-grid">
+      <div class="service-card"><div class="idx">01</div><h3>Clinical trial &amp; center identification</h3><p>We research active U.S. trials and specialized centers relevant to your diagnosis, including rare and genetic conditions with limited global treatment options.</p></div>
+      <div class="service-card"><div class="idx">02</div><h3>Medical record review &amp; organization</h3><p>Your records are reviewed, translated where needed, and organized into the format U.S. institutions require for evaluation.</p></div>
+      <div class="service-card"><div class="idx">03</div><h3>Application preparation &amp; submission</h3><p>We prepare and submit applications to hospitals and trial sites on your behalf, tracking every step of the process.</p></div>
+      <div class="service-card"><div class="idx">04</div><h3>Appointment &amp; evaluation coordination</h3><p>We schedule required medical evaluations and consultations, aligning timelines between you and the receiving center.</p></div>
+      <div class="service-card"><div class="idx">05</div><h3>Accommodation &amp; hospital process coordination</h3><p>Once you're in the U.S., we coordinate accommodation logistics and each step of the hospital's intake process. Visa legal representation is outside our scope — we recommend independent immigration counsel for that.</p></div>
+      <div class="service-card"><div class="idx">06</div><h3>Ongoing communication support</h3><p>A consistent point of contact between you or your family and the U.S. medical team for the duration of your case.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- PROGRAMS -->
+<section class="programs" id="programs">
+  <div class="wrap">
+    <span class="eyebrow">Beyond Full Case Coordination</span>
+    <h2 style="margin-top:14px;">Five ways to work with RAINGAIA HEALTH.</h2>
+    <p style="color:#AEC2CF;max-width:600px;margin-top:14px;font-size:15px;">Not every situation needs full coordination from day one. These standalone programs let you start with exactly what you need — from a single specialist opinion to an ongoing institutional partnership.</p>
+
+    <div class="prog-block" id="second-opinion">
+      <span class="tag">Individual Program</span>
+      <h3>U.S. Specialist Second Opinion</h3>
+      <p class="lede-p">An independent written or video opinion from a U.S. specialist on your existing diagnosis and treatment plan — before committing to a treatment path, without entering full case coordination.</p>
+      <div class="prog-detail-grid">
+        <div class="detail-card"><h4>Specialist matching</h4><p>We match your case to a U.S. specialist with relevant experience in your specific diagnosis — verified credentials, not a generalist queue.</p></div>
+        <div class="detail-card"><h4>Record review</h4><p>Your existing records and reports are reviewed and organized so the specialist has what's needed to form a genuine opinion, not a surface-level read.</p></div>
+        <div class="detail-card"><h4>Written or video opinion</h4><p>A structured written report, or a live video consultation where you can ask questions directly, depending on the option you choose.</p></div>
+      </div>
+      <p style="margin-top:18px;font-size:13.5px;color:#8199A9;">Who it's for: patients who already have a diagnosis and treatment plan at home and want an independent U.S. clinical perspective first. The opinion is yours to use however you choose — with no obligation to continue with RAINGAIA HEALTH afterward.</p>
+    </div>
+
+    <div class="prog-block" id="record-translation">
+      <span class="tag">Individual Program</span>
+      <h3>Medical Record Translation &amp; Organization</h3>
+      <p class="lede-p">Your records, translated and organized into the format U.S. hospitals and trial sites actually require — a fast, self-contained starting point.</p>
+      <div class="prog-detail-grid">
+        <div class="detail-card"><h4>Professional medical translation</h4><p>Your diagnosis, treatment history, imaging reports, and lab results translated with attention to accurate medical terminology.</p></div>
+        <div class="detail-card"><h4>U.S.-standard organization</h4><p>Records structured chronologically and by category into the format U.S. institutions expect — reducing back-and-forth during a later application.</p></div>
+        <div class="detail-card"><h4>A portable case file</h4><p>You keep a copy of the organized file for a second opinion, a future application, or a local physician who wants an English summary.</p></div>
+      </div>
+      <p style="margin-top:18px;font-size:13.5px;color:#8199A9;">Who it's for: patients not yet ready to commit to full coordination, but who want their documentation ready.</p>
+    </div>
+
+    <div class="prog-block" id="membership">
+      <span class="tag">Ongoing Program</span>
+      <h3>Case Membership for Long-Term Conditions</h3>
+      <p class="lede-p">For families managing a progressive or rare condition over years, not weeks — continuous coordination for one predictable fee, instead of paying per request.</p>
+      <div class="prog-detail-grid">
+        <div class="detail-card"><h4>A standing point of contact</h4><p>One consistent coordinator who already knows your case history, rather than re-explaining your situation each time something changes.</p></div>
+        <div class="detail-card"><h4>Ongoing communication</h4><p>As treatment progresses, we continue relaying updates, questions, and follow-up scheduling with the receiving institution.</p></div>
+        <div class="detail-card"><h4>Re-evaluation over time</h4><p>Periodic review of newly available trials or therapies relevant to your case, as options change.</p></div>
+      </div>
+      <p style="margin-top:18px;font-size:13.5px;color:#8199A9;">Who it's for: families already in or entering a long-term U.S. treatment relationship, particularly for rare genetic and progressive conditions.</p>
+    </div>
+
+    <div class="prog-block" id="diagnostics">
+      <span class="tag">Individual Program</span>
+      <h3>Advanced Diagnostics &amp; Genetic Testing</h3>
+      <p class="lede-p">For cases without a clear diagnosis, we coordinate access to advanced diagnostic and genetic testing programs at U.S. laboratories and institutions — a diagnostic step, not a treatment.</p>
+      <div class="prog-detail-grid">
+        <div class="detail-card"><h4>Undiagnosed case review</h4><p>Our clinical research team reviews your history and existing test results to identify what further diagnostic pathway may help.</p></div>
+        <div class="detail-card"><h4>Laboratory &amp; program matching</h4><p>We identify U.S. laboratories and diagnostic programs, including genetic testing panels and undiagnosed-disease programs, relevant to your presentation.</p></div>
+        <div class="detail-card"><h4>Sample &amp; results coordination</h4><p>We coordinate sample shipment logistics where applicable, and organize results once returned, alongside your case file.</p></div>
+      </div>
+      <p style="margin-top:18px;font-size:13.5px;color:#8199A9;">What this is not: this program coordinates access to testing — it does not interpret results clinically or make a diagnosis. Interpretation and any treatment plan are handled by licensed physicians at the receiving institution.</p>
+    </div>
+
+    <div class="prog-block" id="institutions">
+      <span class="tag">Institutional Program</span>
+      <h3>Partnerships for Insurers, TPAs &amp; Employers</h3>
+      <p class="lede-p">A single structured partnership that opens U.S. treatment and clinical trial access for an entire member or employee population.</p>
+      <div class="prog-detail-grid">
+        <div class="detail-card"><h4>A defined access benefit</h4><p>A clear, documented patient access pathway your organization can offer as a benefit — second opinions, trial matching, and full case coordination.</p></div>
+        <div class="detail-card"><h4>Volume-based agreement</h4><p>Pricing and service levels structured for institutional volume — a single agreement rather than case-by-case negotiation.</p></div>
+        <div class="detail-card"><h4>Reporting &amp; oversight</h4><p>Aggregated, privacy-compliant reporting on program usage, so your organization can evaluate the benefit's value over time.</p></div>
+      </div>
+      <p style="margin-top:18px;font-size:13.5px;color:#8199A9;">Who it's for: international health insurers and TPAs, multinational employers offering a medical travel benefit, and government or NGO health programs. Individual patient fees may be billed to the institution, the member, or shared, depending on the agreement — fully disclosed in the partnership contract, distinct from our patient-only fee model for direct-to-patient cases. <a href="#contact" style="color:#7FD9C4;text-decoration:underline;">Discuss a partnership →</a></p>
+    </div>
+  </div>
+</section>
+
+<!-- CONDITIONS -->
+<section class="conditions" id="conditions">
+  <div class="wrap">
+    <span class="eyebrow">Who We Help</span>
+    <h2 style="margin-top:14px;">Conditions where U.S. access makes the difference.</h2>
+    <div class="cond-grid">
+      <div class="cond-card"><h4>Rare genetic diseases</h4><p>Including inherited conditions such as Usher syndrome, where specialized trials and therapies are concentrated in a small number of U.S. centers.</p></div>
+      <div class="cond-card"><h4>U.S.-dominant clinical trials</h4><p>Conditions where the majority of active, relevant trials are registered and run within the United States.</p></div>
+      <div class="cond-card"><h4>Complex or progressive disease</h4><p>Cases where standard treatment options at home are limited, exhausted, or unavailable, and further options require specialist review.</p></div>
+      <div class="cond-card"><h4>Advanced &amp; gene therapies</h4><p>Emerging therapies, including gene and cell-based treatments, approved or trialed primarily within U.S. institutions.</p></div>
+      <div class="cond-card"><h4>Second opinion needs</h4><p>Patients seeking an independent, specialized U.S. clinical opinion before committing to a treatment path at home.</p></div>
+      <div class="cond-card"><h4>Undiagnosed &amp; unclear cases</h4><p>Complex presentations without a clear diagnosis, where access to specialized U.S. diagnostic programs may provide answers.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- TRANSPARENCY -->
+<section class="transparency">
+  <div class="wrap">
+    <span class="eyebrow">Scope &amp; Boundaries</span>
+    <h2 style="margin-top:14px;max-width:560px;">What RAINGAIA HEALTH is — and what it deliberately is not.</h2>
+    <div class="tp-grid" style="margin-top:40px;">
+      <div class="tp-col yes">
+        <h3>What we do</h3>
+        <ul class="tp-list">
+          <li>Independent case review and clinical trial / center research</li>
+          <li>Medical record organization and application preparation</li>
+          <li>Appointment, evaluation, accommodation &amp; hospital process coordination</li>
+          <li>Ongoing communication support between you and your U.S. medical team</li>
+          <li>Transparent, upfront service fees — charged to patients, not institutions</li>
+        </ul>
+      </div>
+      <div class="tp-col no">
+        <h3>What we don't do</h3>
+        <ul class="tp-list">
+          <li>We are not a pharmacy and do not sell, export, or ship medicines</li>
+          <li>We do not provide medical advice, diagnosis, or treatment</li>
+          <li>We do not guarantee acceptance into any trial or treatment program</li>
+          <li>We do not accept referral payments or commissions from hospitals or trial sites</li>
+          <li>We do not act as a licensed broker, agent, or immigration attorney — visa legal representation always sits with independent counsel</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEES -->
+<section class="fees" id="fees">
+  <div class="wrap">
+    <span class="eyebrow">How We're Paid</span>
+    <h2 style="margin-top:14px;max-width:560px;">A simple, transparent fee structure — paid by patients, not institutions.</h2>
+    <div class="fees-grid">
+      <div class="fee-card"><span class="stage-label">01 — Upfront</span><h3>Evaluation &amp; application fee</h3><p>Charged at the start of your case for clinical research, trial/center identification, and initial application preparation. Non-refundable, and does not guarantee acceptance into any program.</p></div>
+      <div class="fee-card"><span class="stage-label">02 — Upon acceptance</span><h3>Facilitation fee</h3><p>Payable if you are accepted into a trial or treatment program and choose to proceed with full coordination.</p></div>
+      <div class="fee-card"><span class="stage-label">03 — Ongoing (optional)</span><h3>Coordination support</h3><p>For patients who want continued communication support with their U.S. medical team throughout an extended course of treatment.</p></div>
+    </div>
+    <p class="fee-note">RAINGAIA HEALTH does not accept referral fees, commissions, or any form of compensation from hospitals, trial sites, or medical institutions. Our fees are paid exclusively by the patients we serve. We may separately receive referral fees from independent, non-medical service providers (immigration attorneys, translators, travel agencies) — disclosed and unrelated to any clinical recommendation.</p>
+    <p style="margin-top:22px;font-size:14px;max-width:700px;">We charge patients directly rather than accepting compensation from hospitals or trial sites. This means our recommendations are based on what fits your case — not on which institution pays us. Exact fee amounts are confirmed during your initial case review, before any payment is requested.</p>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="wrap about-grid">
+    <div>
+      <span class="eyebrow">Company</span>
+      <h2 style="margin-top:14px;">An independent bridge to U.S. medicine.</h2>
+      <p style="margin-top:18px;font-size:15px;">RAINGAIA HEALTH is a service of RAINGAIA LLC, a Florida-registered company. We act as a professional bridge between international patients and U.S. hospitals, research centers, and clinical trial sites — never by selling medicines or providing medical treatment ourselves.</p>
+      <div class="company-card" style="margin-top:28px;">
+        <strong style="color:var(--navy);">RAINGAIA LLC — doing business as RAINGAIA HEALTH</strong><br>
+        7901 4th St N Ste 300, St. Petersburg, FL 33702, US<br>
+        raingaia@outlook.com
+      </div>
+    </div>
+    <div class="about">
+      <h3>How we research a match</h3>
+      <p>Every clinical trial or treatment center we present has passed three checks: eligibility fit, active enrollment status, and verified physician/institution credentials. If a case doesn't have a genuine match, we say so.</p>
+      <h3>Where our role ends, in the U.S.</h3>
+      <p>Our coordination covers accommodation logistics and the hospital's intake/follow-up process. For medical visas, we help organize documentation — visa legal representation is outside our scope; we refer patients to independent immigration counsel.</p>
+      <h3>Referral partners</h3>
+      <p>Where useful, we may refer patients to independent, non-medical providers (immigration attorneys, translators, travel agencies) and may receive a referral fee from them — separate from patient fees, never involving hospitals or medical institutions.</p>
+      <h3>What we are not</h3>
+      <ul style="margin:0;padding-left:20px;">
+        <li style="font-size:14px;color:var(--ink-soft);margin-bottom:7px;">We are not a pharmacy or pharmaceutical exporter</li>
+        <li style="font-size:14px;color:var(--ink-soft);margin-bottom:7px;">We do not provide medical advice or treatment</li>
+        <li style="font-size:14px;color:var(--ink-soft);margin-bottom:7px;">We do not guarantee acceptance into any clinical trial or treatment program</li>
+        <li style="font-size:14px;color:var(--ink-soft);margin-bottom:7px;">We are not a licensed broker, agent, or immigration attorney — visa legal representation always sits with independent counsel</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- APPLY / CONTACT -->
+<section class="apply" id="apply">
+  <div class="wrap apply-grid">
+    <div>
+      <span class="eyebrow">Start Here</span>
+      <h2 style="margin-top:14px;">Tell us about your case.</h2>
+      <p>Every case is reviewed individually. There is no obligation to proceed after your initial evaluation, and your information is kept confidential.</p>
+      <div class="contact-block">
+        <div><strong style="color:#fff;">RAINGAIA LLC</strong><br><span style="font-size:12px;color:#8199A9;">doing business as RAINGAIA HEALTH</span></div>
+        <div>7901 4th St N Ste 300, St. Petersburg, FL 33702, US</div>
+        <div>raingaia@outlook.com</div>
+        <div style="margin-top:12px;font-size:12px;color:#6E8393;">We communicate by email only.</div>
+      </div>
+    </div>
+    <form id="case-form">
+      <div class="form-row">
+        <div class="field"><label for="fullName">Full name</label><input type="text" id="fullName" required /></div>
+        <div class="field"><label for="country">Country of residence</label><input type="text" id="country" required /></div>
+      </div>
+      <div class="form-row">
+        <div class="field"><label for="email">Email address</label><input type="email" id="email" required /></div>
+        <div class="field"><label for="condition">Diagnosis / condition</label><input type="text" id="condition" placeholder="e.g. Usher syndrome" required /></div>
+      </div>
+      <div class="field">
+        <label for="reason">Reason for contact</label>
+        <select id="reason">
+          <option>Patient case review</option>
+          <option>Second opinion</option>
+          <option>Record translation</option>
+          <option>Case membership</option>
+          <option>Advanced diagnostics</option>
+          <option>Institutional partnership</option>
+          <option>Press / general question</option>
+        </select>
+      </div>
+      <div class="field"><label for="message">Briefly describe your case or inquiry</label><textarea id="message" rows="4" placeholder="Diagnosis stage, current treatment, and what you're hoping to find in the U.S."></textarea></div>
+      <div class="consent">
+        <input type="checkbox" id="consent" required />
+        <label for="consent" style="text-transform:none;letter-spacing:0;margin:0;">I understand this is a case evaluation request, not a guarantee of acceptance into any program, and I agree to the <a href="#legal" style="text-decoration:underline;">Terms of Service</a> and <a href="#legal" style="text-decoration:underline;">Privacy Policy</a>.</label>
+      </div>
+      <button type="submit" class="form-submit">Submit for Review</button>
+      <div id="form-status"></div>
+    </form>
+  </div>
+</section>
+
+<!-- CONTACT (institutional / general — separate from patient case intake) -->
+<section class="apply" id="contact" style="background:var(--navy);padding-top:80px;">
+  <div class="wrap apply-grid">
+    <div>
+      <span class="eyebrow">Get In Touch</span>
+      <h2 style="margin-top:14px;color:#fff;">Not a patient case? Contact us here.</h2>
+      <p>For institutional partnerships, press inquiries, or general questions that aren't a specific patient case. If you're a patient or family member, use the case review form above instead — it routes directly to our clinical research team.</p>
+      <div class="contact-block">
+        <div><strong style="color:#fff;">RAINGAIA LLC</strong><br><span style="font-size:12px;color:#8199A9;">doing business as RAINGAIA HEALTH</span></div>
+        <div>7901 4th St N Ste 300, St. Petersburg, FL 33702, US</div>
+        <div>raingaia@outlook.com</div>
+        <div style="margin-top:12px;font-size:12px;color:#6E8393;">We communicate by email only and do not currently list a phone number.</div>
+      </div>
+    </div>
+    <form id="contact-form">
+      <div class="form-row">
+        <div class="field"><label for="cFullName">Full name</label><input type="text" id="cFullName" required /></div>
+        <div class="field"><label for="cEmail">Email address</label><input type="email" id="cEmail" required /></div>
+      </div>
+      <div class="field">
+        <label for="cInquiryType">Reason for contact</label>
+        <select id="cInquiryType">
+          <option>Institutional / hospital partnership</option>
+          <option>Press &amp; media</option>
+          <option>General question</option>
+          <option>Other</option>
+        </select>
+      </div>
+      <div class="field"><label for="cMessage">Your message</label><textarea id="cMessage" rows="5" placeholder="Tell us what this is about."></textarea></div>
+      <button type="submit" class="form-submit">Send Message</button>
+      <div id="contact-form-status"></div>
+    </form>
+  </div>
+</section>
+
+<!-- LEGAL -->
+<section class="legal" id="legal">
+  <div class="wrap">
+    <div class="legal-shell">
+      <span class="eyebrow">Legal</span>
+      <h2 style="margin-top:14px;margin-bottom:30px;">Policies</h2>
+      <span class="updated">Last updated: [insert date before publishing]</span>
+      <div class="legal-tabs">
+        <div class="legal-tab active" data-tab="privacy">Privacy Policy</div>
+        <div class="legal-tab" data-tab="terms">Terms of Service</div>
+        <div class="legal-tab" data-tab="disclaimer">Medical Disclaimer</div>
+      </div>
+
+      <div class="legal-panel active" id="panel-privacy">
+        <h3>1. Information we collect</h3>
+        <p>When you submit a case, we collect the information you provide directly — name, country of residence, email, the condition you describe, and any records you choose to share.</p>
+        <h3>2. How we use your information</h3>
+        <ul>
+          <li>To review your case and identify relevant U.S. options</li>
+          <li>To communicate about your case, our services, and fees</li>
+          <li>To prepare and submit applications on your behalf, if you proceed</li>
+          <li>To coordinate appointments, evaluations, and logistics</li>
+        </ul>
+        <p>We do not use your information for advertising or sell it to third parties.</p>
+        <h3>3. When we share information</h3>
+        <p>Only as needed to provide services you request — for example, with a U.S. hospital as part of an application you asked us to submit. We never share information in exchange for referral compensation from hospitals or trial sites.</p>
+        <h3>4. Health-related information</h3>
+        <p>RAINGAIA HEALTH is not a covered entity or business associate under HIPAA, but we apply comparable safeguards to health information you share with us, and limit what we request at the inquiry stage.</p>
+        <h3>5. Your rights</h3>
+        <p>Depending on where you live, you may have rights under GDPR, CCPA, or KVKK to access, correct, or delete your information. Contact us to exercise these rights.</p>
+        <h3>6. Data security &amp; retention</h3>
+        <p>We take reasonable technical and organizational measures to protect your information. We retain case information for as long as needed to provide our services and meet legal recordkeeping obligations, after which it is securely deleted or anonymized.</p>
+        <h3>7. Contact</h3>
+        <p>RAINGAIA LLC, doing business as RAINGAIA HEALTH · 7901 4th St N Ste 300, St. Petersburg, FL 33702, US · raingaia@outlook.com</p>
+      </div>
+
+      <div class="legal-panel" id="panel-terms">
+        <h3>1. Who we are</h3>
+        <p>RAINGAIA HEALTH is a service of RAINGAIA LLC, a Florida-registered company providing independent patient access facilitation and coordination services.</p>
+        <h3>2. Nature of our services</h3>
+        <p>Our services are administrative and logistical. We do not practice medicine or make treatment decisions — all clinical decisions are made by licensed physicians at the receiving institution.</p>
+        <h3>3. No guarantee of acceptance</h3>
+        <p>Submitting a case or paying the evaluation fee does not guarantee acceptance into any program. Acceptance is decided solely by the receiving institution.</p>
+        <h3>4. Fees</h3>
+        <p>Fees are described on this page and confirmed individually before payment. The evaluation fee is non-refundable. We do not accept compensation from hospitals or trial sites for patient referrals; we may separately receive referral fees from independent non-medical providers, disclosed and unrelated to clinical recommendations.</p>
+        <h3>5. Not a pharmacy or medical provider</h3>
+        <p>We do not sell, distribute, or ship medications, and are not a licensed broker, insurance agent, or immigration attorney.</p>
+        <h3>6. Your responsibilities</h3>
+        <p>You agree to provide accurate and complete information about your case, diagnosis, and medical history to the best of your knowledge, and to inform us promptly of any material changes.</p>
+        <h3>7. Limitation of liability</h3>
+        <p>To the fullest extent permitted by law, RAINGAIA HEALTH is not liable for the clinical decisions or outcomes of any third-party hospital or provider. Our liability for our own services is limited to fees paid for that specific service.</p>
+        <h3>8. Governing law</h3>
+        <p>These terms are governed by the laws of the State of Florida, United States.</p>
+        <h3>9. Contact</h3>
+        <p>RAINGAIA LLC, doing business as RAINGAIA HEALTH · 7901 4th St N Ste 300, St. Petersburg, FL 33702, US · raingaia@outlook.com</p>
+      </div>
+
+      <div class="legal-panel" id="panel-disclaimer">
+        <h3>Not a substitute for professional medical advice</h3>
+        <p>RAINGAIA HEALTH is not a hospital, pharmacy, medical provider, or insurer. Nothing on this website or in our case review process constitutes medical advice, diagnosis, or treatment.</p>
+        <h3>Clinical decisions belong to licensed physicians</h3>
+        <p>All diagnostic and treatment decisions are made exclusively by licensed physicians at the institution that accepts your case.</p>
+        <h3>No guarantee of outcomes</h3>
+        <p>We do not guarantee acceptance into any program, nor any particular treatment outcome.</p>
+        <h3>In case of a medical emergency</h3>
+        <p>Contact your local emergency services immediately. Do not rely on RAINGAIA HEALTH for urgent or emergency medical needs.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <div class="logo" style="color:#fff;margin-bottom:14px;"><span class="logo-mark"></span>RAINGAIA HEALTH</div>
+        <p style="font-size:13px;max-width:320px;color:#8199A9;">An independent patient access facilitation company connecting international patients to advanced U.S. treatment and clinical trials.</p>
+      </div>
+      <div>
+        <h5>Company</h5>
+        <a href="#how">How It Works</a>
+        <a href="#services">Services</a>
+        <a href="#programs">Programs</a>
+        <a href="#conditions">Conditions We Help With</a>
+        <a href="#fees">Fees</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <div>
+        <h5>Legal</h5>
+        <a href="#legal" onclick="showLegalTab('privacy')">Privacy Policy</a>
+        <a href="#legal" onclick="showLegalTab('terms')">Terms of Service</a>
+        <a href="#legal" onclick="showLegalTab('disclaimer')">Medical Disclaimer</a>
+      </div>
+    </div>
+    <div class="footer-legal">
+      RAINGAIA HEALTH is a service of RAINGAIA LLC, a Florida-registered company, providing independent patient access facilitation and coordination services. RAINGAIA HEALTH is not a hospital, pharmacy, medical provider, insurer, or government agency, does not practice medicine, and does not guarantee admission, acceptance, or outcomes for any patient, trial, or treatment program. All clinical decisions are made exclusively by licensed physicians at the receiving institution. Service fees are charged to and payable by patients only for patient-facing services; RAINGAIA HEALTH does not accept payment, referral fees, or commissions from hospitals, trial sites, or medical institutions in connection with patient referrals.
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 RAINGAIA LLC. All rights reserved.</span>
+      <span>St. Petersburg, Florida, United States</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('menuBtn').addEventListener('click', function(){
+    document.getElementById('mobileMenu').classList.add('open');
+  });
+  document.getElementById('closeMenuBtn').addEventListener('click', function(){
+    document.getElementById('mobileMenu').classList.remove('open');
+  });
+  document.querySelectorAll('#mobileMenu a').forEach(function(a){
+    a.addEventListener('click', function(){
+      document.getElementById('mobileMenu').classList.remove('open');
+    });
+  });
+
+  document.getElementById('case-form').addEventListener('submit', function(e){
+    e.preventDefault();
+    var status = document.getElementById('form-status');
+    status.innerHTML = '<p style="color:#7FD9C4;">Submitting...</p>';
+    setTimeout(function(){
+      status.innerHTML = '<p style="color:#7FD9C4;">Thank you. Our team will contact you by email within 2–3 business days.</p>';
+      document.getElementById('case-form').reset();
+    }, 1200);
+  });
+
+  document.getElementById('contact-form').addEventListener('submit', function(e){
+    e.preventDefault();
+    var status = document.getElementById('contact-form-status');
+    status.innerHTML = '<p style="color:#7FD9C4;">Sending your message...</p>';
+    setTimeout(function(){
+      status.innerHTML = '<p style="color:#7FD9C4;">Thank you. We\\'ll reply by email within 2–3 business days.</p>';
+      document.getElementById('contact-form').reset();
+    }, 1200);
+  });
+
+  function showLegalTab(tab){
+    document.querySelectorAll('.legal-tab').forEach(function(t){ t.classList.toggle('active', t.dataset.tab === tab); });
+    document.querySelectorAll('.legal-panel').forEach(function(p){ p.classList.remove('active'); });
+    document.getElementById('panel-' + tab).classList.add('active');
+  }
+  document.querySelectorAll('.legal-tab').forEach(function(t){
+    t.addEventListener('click', function(){ showLegalTab(t.dataset.tab); });
+  });
+</script>
+
+</body>
+</html>
